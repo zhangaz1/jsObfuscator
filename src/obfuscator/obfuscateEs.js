@@ -1,7 +1,7 @@
 module.exports = obfuscateEs;
 
-function obfuscateEs(code) {
+function obfuscateEs(code, options) {
     const UglifyJS = require('uglify-es');
-    const result = UglifyJS.minify(code);
+    const result = UglifyJS.minify(code, options);
     return result.code;
 }

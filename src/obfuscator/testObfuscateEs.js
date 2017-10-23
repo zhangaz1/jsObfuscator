@@ -8,6 +8,25 @@ function testObfuscateEs(obfuscateEs) {
     
     console.log('xxxxxxxxxxxxxxxxxxxx original:', code);
     
-    const obfuscated = obfuscateEs(code);
-    console.log('xxxxxxxxxxxxxxxxxxxx obfuscate:', obfuscated);
+    let obfuscated = obfuscateEs(code);
+    console.log('xxxxxxxxxxxxxxxxxxxx obfuscate1:', obfuscated);
+    
+    obfuscated = obfuscateEs(code, {
+        toplevel: true,
+        nameCache: {},
+        compress: {},
+        mangle: {
+            toplevel:true,
+        },
+    });
+    console.log('xxxxxxxxxxxxxxxxxxxx obfuscate2:', obfuscated);
+    
+    // obfuscated = obfuscateEs(code);
+    // console.log('xxxxxxxxxxxxxxxxxxxx obfuscate1:', obfuscated);
+    //
+    // obfuscated = obfuscateEs(code);
+    // console.log('xxxxxxxxxxxxxxxxxxxx obfuscate1:', obfuscated);
+    //
+    // obfuscated = obfuscateEs(code);
+    // console.log('xxxxxxxxxxxxxxxxxxxx obfuscate1:', obfuscated);
 }
